@@ -4,30 +4,24 @@ from django.contrib.auth.models import BaseUserManager
 
 
 class UserManager(BaseUserManager):
-    def create_user(self, username, email, name, last_name, password=None):
-        if not email:
-            raise ValueError('El usuario debe tener correo electrónico!')
+    def create_user(self, username, email, name, password, is_staff,
+                    is_superuser, **extra_fields):
         user = self.model(
             username=username,
-            email=self.normalize_email(email),
+            email=email,
             name=name,
-            last_name=last_name,
+            is_staff=is_staff,
+            is_superuser=is_superuser,
+            **extra_fields
         )
         user.set_password(password)
         user.save(using=self.db)
         return user
 
-    def create_superuser(self, username, email, name, last_name, password):
-        user = self.create_user(
-            email,
-            username=username,
-            name=name,
-            last_name=last_name,
-            password=password,
-        )
-        user.is_staff = True
-        user.save()
-        return user
+    def create_superuser(self, username, email, name, password=None,
+                         **extra_fields):
+        return self.create_user(username, email, name, password, True,
+                                 True, **extra_fields)
 
 
 class User(AbstractBaseUser, PermissionsMixin):
@@ -43,7 +37,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     objects = UserManager()
 
     USERNAME_FIELD = 'username'
-    REQUIRED_FIELDS = ['email', 'name', 'last_name']
+    REQUIRED_FIELDS = ['email', 'name']
 
     def __str__(self):
         return f'{self.name},{self.last_name}'
