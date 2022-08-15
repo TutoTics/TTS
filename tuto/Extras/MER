@@ -1,0 +1,188 @@
+-- ---
+-- Globals
+-- ---
+
+-- SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+-- SET FOREIGN_KEY_CHECKS=0;
+
+-- ---
+-- Table 'departments'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `departments`;
+		
+CREATE TABLE `departments` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `name` INTEGER NULL DEFAULT NULL,
+  `index` INTEGER NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- ---
+-- Table 'users'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `users`;
+		
+CREATE TABLE `users` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `phhumber` INTEGER NULL DEFAULT NULL,
+  `phone_number` INTEGER NULL DEFAULT NULL,
+  `name` INTEGER NULL DEFAULT NULL,
+  `surname` INTEGER NULL DEFAULT NULL,
+  `patronymic` INTEGER NULL DEFAULT NULL,
+  `email` INTEGER NULL DEFAULT NULL,
+  `whatsapp` INTEGER NULL DEFAULT NULL,
+  `current_manager_id` INTEGER NULL DEFAULT NULL,
+  `password` INTEGER NULL DEFAULT NULL,
+  `password_hash` INTEGER NULL DEFAULT NULL,
+  `team_id` INTEGER NULL DEFAULT NULL,
+  `disabed` INTEGER NULL DEFAULT NULL,
+  `role` INTEGER NULL DEFAULT NULL,
+  `locale` INTEGER NULL DEFAULT NULL,
+  `price_locale` INTEGER NULL DEFAULT NULL,
+  `details` INTEGER NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- ---
+-- Table 'profesor'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `profesor`;
+		
+CREATE TABLE `profesor` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `user` INTEGER NULL DEFAULT NULL,
+  `document` INTEGER NULL DEFAULT NULL,
+  `phone_number` INTEGER NULL DEFAULT NULL,
+  `photo` INTEGER NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- ---
+-- Table 'estudiante'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `estudiante`;
+		
+CREATE TABLE `estudiante` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `user` INTEGER NULL DEFAULT NULL,
+  `code` INTEGER NULL DEFAULT NULL,
+  `phone_nomber` INTEGER NULL DEFAULT NULL,
+  `address` INTEGER NULL DEFAULT NULL,
+  `photo` INTEGER NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- ---
+-- Table 'usuario'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `usuario`;
+		
+CREATE TABLE `usuario` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `username` INTEGER NULL DEFAULT NULL,
+  `email` INTEGER NULL DEFAULT NULL,
+  `name` INTEGER NULL DEFAULT NULL,
+  `last_name` INTEGER NULL DEFAULT NULL,
+  `is_active` INTEGER NULL DEFAULT NULL,
+  `is_staff` INTEGER NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- ---
+-- Table 'materia'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `materia`;
+		
+CREATE TABLE `materia` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `name` INTEGER NULL DEFAULT NULL,
+  `schedule` INTEGER NULL DEFAULT NULL,
+  `id_Semestre` INTEGER NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- ---
+-- Table 'Inscripcion'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `Inscripcion`;
+		
+CREATE TABLE `Inscripcion` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `fecha` INTEGER NULL DEFAULT NULL,
+  `profesor` INTEGER NULL DEFAULT NULL,
+  `estudiante` INTEGER NULL DEFAULT NULL,
+  `materia` INTEGER NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- ---
+-- Table 'Semestre'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `Semestre`;
+		
+CREATE TABLE `Semestre` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `Numero` INTEGER NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- ---
+-- Foreign Keys 
+-- ---
+
+ALTER TABLE `profesor` ADD FOREIGN KEY (user) REFERENCES `usuario` (`id`);
+ALTER TABLE `estudiante` ADD FOREIGN KEY (user) REFERENCES `usuario` (`id`);
+ALTER TABLE `materia` ADD FOREIGN KEY (id_Semestre) REFERENCES `Semestre` (`id`);
+ALTER TABLE `Inscripcion` ADD FOREIGN KEY (profesor) REFERENCES `profesor` (`id`);
+ALTER TABLE `Inscripcion` ADD FOREIGN KEY (estudiante) REFERENCES `estudiante` (`id`);
+ALTER TABLE `Inscripcion` ADD FOREIGN KEY (materia) REFERENCES `materia` (`id`);
+
+-- ---
+-- Table Properties
+-- ---
+
+-- ALTER TABLE `departments` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `users` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `profesor` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `estudiante` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `usuario` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `materia` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `Inscripcion` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `Semestre` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- ---
+-- Test Data
+-- ---
+
+-- INSERT INTO `departments` (`id`,`name`,`index`) VALUES
+-- ('','','');
+-- INSERT INTO `users` (`id`,`phhumber`,`phone_number`,`name`,`surname`,`patronymic`,`email`,`whatsapp`,`current_manager_id`,`password`,`password_hash`,`team_id`,`disabed`,`role`,`locale`,`price_locale`,`details`) VALUES
+-- ('','','','','','','','','','','','','','','','','');
+-- INSERT INTO `profesor` (`id`,`user`,`document`,`phone_number`,`photo`) VALUES
+-- ('','','','','');
+-- INSERT INTO `estudiante` (`id`,`user`,`code`,`phone_nomber`,`address`,`photo`) VALUES
+-- ('','','','','','');
+-- INSERT INTO `usuario` (`id`,`username`,`email`,`name`,`last_name`,`is_active`,`is_staff`) VALUES
+-- ('','','','','','','');
+-- INSERT INTO `materia` (`id`,`name`,`schedule`,`id_Semestre`) VALUES
+-- ('','','','');
+-- INSERT INTO `Inscripcion` (`id`,`fecha`,`profesor`,`estudiante`,`materia`) VALUES
+-- ('','','','','');
+-- INSERT INTO `Semestre` (`id`,`Numero`) VALUES
+-- ('','');
