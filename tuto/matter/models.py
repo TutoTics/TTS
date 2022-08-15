@@ -38,7 +38,6 @@ class Matter(models.Model):
     semester = models.ForeignKey(
         Semester, on_delete=models.CASCADE, verbose_name='Semestre',
     )
-
     class Meta:
         verbose_name = 'Materia'
         verbose_name_plural = 'Materias'

@@ -71,3 +71,4 @@ class UserForm(forms.ModelForm):
 
             )
         }
+
