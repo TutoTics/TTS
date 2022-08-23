@@ -1,5 +1,5 @@
 from django import forms
-from models import User
+from models import User, Student, Teacher
 
 
 class UserForm(forms.ModelForm):
@@ -72,3 +72,78 @@ class UserForm(forms.ModelForm):
             )
         }
 
+
+class StudentForm(forms.ModelForm):
+    """
+        Formulario de registro de estudiantes en la base de datos
+        Variables:
+    """
+    class Meta:
+        model = Student
+        fields = ('code', 'phone_number', 'address', 'photo')
+        widgets = {
+            'code': forms.CharField(
+                attrs={
+                    'class': 'form-control',
+                    'required': 'required',
+                }
+            ),
+            'phone_number': forms.CharField(
+                attrs={
+                    'class': 'form-control',
+                    'required': 'required',
+                }
+            ),
+            'address': forms.CharField(
+                attrs={
+                    'class': 'form-control',
+                    'required': 'required',
+                }
+
+            ),
+            'photo': forms.FileField(
+                attrs={
+                    'class': 'form-control',
+                    'required': 'required',
+                }
+
+            )
+        }
+
+
+class TeacherForm(forms.ModelForm):
+    """
+        Formulario de registro de profesores en la base de datos
+        Variables:
+    """
+    class Meta:
+        model = Teacher
+        fields = ('document', 'address', 'photo', 'phone_number')
+        widgets = {
+            'document': forms.CharField(
+                attrs={
+                    'class': 'form-control',
+                    'required': 'required',
+                }
+            ),
+            'phone_number': forms.CharField(
+                attrs={
+                    'class': 'form-control',
+                    'required': 'required',
+                }
+            ),
+            'address': forms.CharField(
+                attrs={
+                    'class': 'form-control',
+                    'required': 'required',
+                }
+
+            ),
+            'photo': forms.FileField(
+                attrs={
+                    'class': 'form-control',
+                    'required': 'required',
+                }
+
+            )
+        }
