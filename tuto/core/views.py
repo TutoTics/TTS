@@ -7,3 +7,6 @@ class BasePageView(TemplateView):
 
 class DashboardPageView(TemplateView):
     template_name = "dashboard/dashboard.html"
+
+class LoginPageView(TemplateView):
+    template_name = 'login/sign-in.html'

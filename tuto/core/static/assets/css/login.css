@@ -1,0 +1,16 @@
+.logo-login{
+    width: 150px;
+    margin: 0 auto;
+}
+
+.logo-contenedor{
+    width: 100% !important;
+}
+
+.logo-navbar p{
+    font-size: 18px;
+}
+
+.footer div nav {
+    width: 100%;
+}

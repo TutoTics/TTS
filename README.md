@@ -1,3 +1,41 @@
+<b><h1 style="color:#64ffda;"> TutoTics</h1></b>
+
+_________________________________________________________________
+<h2 style="color:#14cba8;">Descripcion del problema: </h2>
+<p style="text-align:justify;">
+La universidad de los llanos historicamente ha presentado una gran deficiencia en el sistema de tutorias que se van a tener en el semestre lectivo, ya que al iniciar cada semestre tanto los estudiantes como los profesores deben establecer un horario para dicha actividad teniendo en cuenta la disponibilidad horaria de todos los estudiantes inscritos o al menos la mayoria. Se propone como solucion para este problema el desarrollo de un software, el cual compara los diferentes horarios de todos los estudiantes inscritos o al menos la mayoria. Se propone como solucion para este problema el desarrollo de un software, el cual compara los diferentes horarios de todos los estudiantes que estan inscritos en el curso y asigna la tutoria, apoyandose en los espacios libres que tengan la mayoria de los estudiantes.
+</p>
+
+<h2 style="color:#14cba8;">Requerimiento principal:</h2>
+<p>En base a todos los requerimientos se escogieron lo mas importantes los cuales serían: <br>
+-	Generar Tutoria <br>
+-	Ver horario  
+</p>
+<h2 style="color:#14cba8;">Metodología seleccionada:</h2>
+<p style="text-align:justify;">
+Se implemento una metodología Kanban por medio de un tablero kanban el cual tiene las columnas:
+</p>
+TO DO - IN PROGRESS - TEST - DONE 
+
+En donde se plantearon las siguientes tareas:
+
+<h3>Generar tutoría</h3>
+<p>
+- Desarrollar Mockup (balsamiq Wireframes) <br>
+- Desarrollo de la interfaz (Bootstrap) <br>
+- Configuración de la base de datos PostgreSQL (PgAdmin) <br>
+- Alimentar la BD con horarios de estudiantes y profesores (Script) <br>
+- Configurar los datos de la BD que se mostraran en la interfaz <br>
+- Desarrollar algoritmo que busque un horario optimo de un curso (Python) <br>
+- Testear el algoritmo de busqueda de horarios optimos para tutorias <br>
+- Desplegar solución en el servidor principal
+</p>
+<h2 style="color:#14cba8;"> Asignacion de roles: </h2>
+
+![Roles](Roles.jpeg)
+
+# Descripción Técnica
+
 # TutoTics
 It's academic project created to help teachers and students in the organization of their schedule in tutorials
     
