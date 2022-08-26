@@ -45,6 +45,18 @@ Se utilizan para comprobar el correcto funcionamiento de las unidades individual
 
 En Django se implementó una Liberia "Pytest" ayuda al testeo de funcionalidades especificas dentro del proyecto. Se creó un archivo pytest.init para inicializar es módulo de la Liberia y pueda leer los archivos test_Name, dentro de cada archivo se comprueba cierta funcionalidad. En este caso la creación del usuario.
 
+Lista de errores posibles: https://pylint.pycqa.org/en/latest/user_guide/messages/messages_overview.html 
+
+<h2> Evidencia de pruebas </h2>
+se utilizo la liberia pylint para mirar los errores de sintaxis es decir standar python pep-8
+
+![Roles](prueba1.jpg)
+
+![Roles](prueba2.jpg)
+
+![Roles](prueba3.jpg)
+
+
 
 # Descripción Técnica
 
