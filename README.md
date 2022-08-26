@@ -13,7 +13,7 @@ La universidad de los llanos historicamente ha presentado una gran deficiencia e
 </p>
 <h2 style="color:#14cba8;">Metodología seleccionada:</h2>
 <p style="text-align:justify;">
-Se implemento una metodología Kanban por medio de un tablero kanban el cual tiene las columnas:
+Se implemento una metodología Kanban porque no hay requisitos obligatorios para la estimación y, por lo general, está libre de una gran planificación. Kanban está abierto a realizar cambios durante el proceso de trabajo, se pueden agregar nuevos elementos. Significa que hay menos rigidez y las cosas pueden cambiar con frecuencia. Es por eso que mediante un tablero kanban el cual tiene las columnas:
 </p>
 TO DO - IN PROGRESS - TEST - DONE 
 
@@ -21,7 +21,6 @@ En donde se plantearon las siguientes tareas:
 
 <h3>Generar tutoría</h3>
 <p>
-- Desarrollar Mockup (balsamiq Wireframes) <br>
 - Desarrollo de la interfaz (Bootstrap) <br>
 - Configuración de la base de datos PostgreSQL (PgAdmin) <br>
 - Alimentar la BD con horarios de estudiantes y profesores (Script) <br>
@@ -32,7 +31,20 @@ En donde se plantearon las siguientes tareas:
 </p>
 <h2 style="color:#14cba8;"> Asignacion de roles: </h2>
 
-![Roles](Roles.jpeg)
+Product Owner: Olga Lucero Vega Márquez
+
+Kanban Master: Camilo Andres Quintero Lopez
+
+Kanban Team: 
+
+![Roles](Roles.png)
+
+# Pruebas 
+## Pruebas unitarias 
+Se utilizan para comprobar el correcto funcionamiento de las unidades individuales más pequeñas de los programas informáticos
+
+En Django se implementó una Liberia "Pytest" ayuda al testeo de funcionalidades especificas dentro del proyecto. Se creó un archivo pytest.init para inicializar es módulo de la Liberia y pueda leer los archivos test_Name, dentro de cada archivo se comprueba cierta funcionalidad. En este caso la creación del usuario.
+
 
 # Descripción Técnica
 
