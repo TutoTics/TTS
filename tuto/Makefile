@@ -18,6 +18,8 @@ superuser:
 reset:
 	docker-compose down -v
 	rm -rf .pgdata/
+pylint:
+	docker-compose -f docker-compose.yml run --rm django bash -c 'scripts/pylint.sh'
 startapp:
 	docker-compose run --rm django ./manage.py startapp $(NAME)
 	sudo chmod 777 -R ./$(NAME)
