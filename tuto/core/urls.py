@@ -5,4 +5,5 @@ app_name = 'core'
 urlpatterns = [
     path('', BasePageView.as_view(), name='base'),
     path('dashboard/', DashboardPageView.as_view(), name='dashboard'),
+    path('login/', LoginPageView.as_view(), name='login')
 ]
